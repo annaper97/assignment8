@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
@@ -10,14 +10,14 @@ def home():
 
 @app.route('/assignment8')
 def assignment8():
-    return render_template("assignment8.html", hobbies=['gim', 'tennis', 'travel', 'cooking'])
+    return render_template("assignment8.html", hobbies=['gym', 'tennis', 'travel', 'cooking'])
 
 
 @app.route('/list')
 def list1():
     return render_template('list.html')
 
-@app.route('/assignment9', methods=['get', 'post'])
+@app.route('/assignment9')
 def assignment9():
     users_list = [{"firstName": "Michael", "lastName": "Lawson", "Email": "michael.lawson@reqres.in"},
                   {"firstName": "Lindsay", "lastName": "Ferguson", "Email": "indsay.ferguson@reqres.in"},
