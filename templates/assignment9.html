@@ -1,0 +1,37 @@
+{% extends 'cv.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include 'head.html' %}
+  <title>Assignment 9</title>
+</head>
+<body onload="goTolist()">
+
+{% block myDetails %}
+<div id="list">
+    <div id="response" >   </div>
+</div>
+
+<form action="/assignment9" method="get" id="searchForm">
+     <label for="search" >please enter first name or last name or email:</label><br>
+     <input name ="search" id="search" type="text"> <br>
+     <input type="submit" ><br>
+
+    {% if result %}
+        <h4>The use details is:</h4>
+        <div>{{ result }}</div>
+    {% else %}
+        <h4>The search failed!!</h4>
+        <div>{{ users_list }}</div>
+    {% endif %}
+
+
+</form>
+
+
+<form method="post" id="registratiomForm">
+
+</form>
+{% endblock %}
+</body>
+</html>
