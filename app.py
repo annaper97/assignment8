@@ -10,7 +10,7 @@ def home():
 
 @app.route('/assignment8')
 def assignment8():
-    return render_template("assignment8.html", hobbies=['gim', 'tennis', 'travel', 'cooking'])
+    return render_template("assignment8.html", hobbies=['gym', 'tennis', 'travel', 'cooking'])
 
 
 @app.route('/list')
