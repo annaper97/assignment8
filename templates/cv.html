@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-{% include 'head.html' %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cv.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title> cv - Anna Pertzovski </title>
 </head>
 <body onload="WelcomeText()">
  <div id="myWelcome"> </div>
 <div class="name" style="font-size: 5vw"> Anna Pertzovski </div>
+{% if session['nicknameA'] %}
+   <h4> Hi {{ session['nicknameA'] }} , you logged-in</h4>
+{% endif %}
 <nav class="goTo" style="font-size: 2vw"> <h1> Go To: </h1>
      <a href="#about"  >About Me </a> &nbsp;
     <a href="#education">Education</a> &nbsp;
@@ -50,4 +54,5 @@ I have knowledge in several programing languages and motivation to learn and dev
 {% endblock %}
 
 </body>
+<script src="{{ url_for('static', filename='cv.js') }}"></script>
 </html>
